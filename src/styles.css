@@ -60,9 +60,26 @@
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
   /* Brand tokens — Atul Footwear */
-  --color-brand-umber: #5c4033;
-  --color-brand-ochre: #c2996d;
-  --color-brand-clay: #fcf9f5;
+  --color-brand-umber: #3a1f17;
+  --color-brand-ochre: #d97742;
+  --color-brand-gold: #e8b86a;
+  --color-brand-clay: #f5ede0;
+  --color-brand-cream: #faf4e8;
+  --color-brand-ink: #1a0f0a;
+  --font-display: 'Fraunces', ui-serif, Georgia, serif;
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-float-slow: float 9s ease-in-out infinite;
+  --animate-marquee: marquee 35s linear infinite;
+  --animate-spin-slow: spin 22s linear infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0) rotate(var(--rot, 0deg)); }
+  50% { transform: translateY(-22px) rotate(var(--rot, 0deg)); }
+}
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
 }
 
 :root {
