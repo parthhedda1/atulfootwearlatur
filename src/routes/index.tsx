@@ -523,7 +523,7 @@ function Visit({ mapUrl }: { mapUrl: string }) {
 
               <div className="mt-8 grid sm:grid-cols-2 gap-4">
                 <InfoTile icon={<ClockIcon />} title="Open Daily" body="From 10 AM — until you walk in, you're a customer" />
-                <InfoTile icon={<CashIcon />} title="Payment" body="Cash · ask in store" />
+                <InfoTile icon={<CashIcon />} title="Payment" body="Cash · UPI · Card" />
                 <InfoTile icon={<ParkingIcon />} title="Parking" body="Available for customers" />
                 <InfoTile icon={<PhoneIcon />} title="Phone" body="2382249523" />
               </div>
