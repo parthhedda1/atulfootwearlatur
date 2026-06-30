@@ -735,7 +735,7 @@ function Footer() {
           <div>
             <div className="text-[11px] uppercase tracking-[0.22em] text-[var(--color-brand-gold)] mb-2">Contact</div>
             <a href="tel:+912382249523" className="hover:text-[var(--color-brand-gold)]">2382249523</a>
-            <br /> Opens 10 AM (working days)
+            <br /> Open daily · from 10 AM
           </div>
           <div>
             <div className="text-[11px] uppercase tracking-[0.22em] text-[var(--color-brand-gold)] mb-2">Explore</div>
