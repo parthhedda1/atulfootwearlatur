@@ -220,11 +220,11 @@ function Hero() {
           </div>
 
           <div className="mt-10 flex items-center gap-6">
-            <Stat number="10AM" label="Doors open" />
+            <Stat number="Daily" label="Open every day" />
+            <div className="h-10 w-px bg-[var(--color-brand-umber)]/20" />
+            <Stat number="10 AM" label="Doors open" />
             <div className="h-10 w-px bg-[var(--color-brand-umber)]/20" />
             <Stat number="Free" label="Customer parking" />
-            <div className="h-10 w-px bg-[var(--color-brand-umber)]/20" />
-            <Stat number="Latur" label="Local favourite" />
           </div>
         </div>
 
