@@ -220,11 +220,11 @@ function Hero() {
           </div>
 
           <div className="mt-10 flex items-center gap-6">
-            <Stat number="10AM" label="Doors open" />
+            <Stat number="Daily" label="Open every day" />
+            <div className="h-10 w-px bg-[var(--color-brand-umber)]/20" />
+            <Stat number="10 AM" label="Doors open" />
             <div className="h-10 w-px bg-[var(--color-brand-umber)]/20" />
             <Stat number="Free" label="Customer parking" />
-            <div className="h-10 w-px bg-[var(--color-brand-umber)]/20" />
-            <Stat number="Latur" label="Local favourite" />
           </div>
         </div>
 
@@ -268,16 +268,29 @@ function Hero() {
               animation: "float 6s ease-in-out infinite",
             }}
           />
-          {/* sticker badge */}
+          {/* spinning "Open Daily" coin badge */}
           <div
-            className="absolute right-2 md:right-0 top-4 md:top-8 size-24 md:size-28 rounded-full bg-[var(--color-brand-ink)] text-[var(--color-brand-cream)] grid place-items-center text-center text-[10px] uppercase tracking-[0.2em] font-semibold shadow-[0_18px_30px_-10px_rgba(0,0,0,0.5)]"
-            style={{ transform: "rotate(-12deg)", animation: "float 7s ease-in-out infinite" }}
+            className="absolute right-2 md:right-0 top-4 md:top-8 size-28 md:size-32"
+            style={{ animation: "float 7s ease-in-out infinite", perspective: "600px" }}
           >
-            <div>
-              Hand
-              <br />
-              picked
-              <br />in Latur
+            <div
+              className="absolute inset-0 rounded-full bg-[var(--color-brand-ink)] text-[var(--color-brand-gold)] shadow-[inset_0_-6px_18px_rgba(0,0,0,0.5),0_18px_30px_-10px_rgba(0,0,0,0.5)]"
+              style={{ animation: "spin 18s linear infinite" }}
+            >
+              <svg viewBox="0 0 100 100" className="absolute inset-0 w-full h-full">
+                <defs>
+                  <path id="ring" d="M50,50 m-38,0 a38,38 0 1,1 76,0 a38,38 0 1,1 -76,0" />
+                </defs>
+                <text fontSize="11" fontWeight="700" letterSpacing="2" fill="currentColor" style={{ fontFamily: "var(--font-display)" }}>
+                  <textPath href="#ring">OPEN DAILY · FROM 10 AM · WALK IN · BE FAMILY · </textPath>
+                </text>
+              </svg>
+            </div>
+            <div className="absolute inset-4 rounded-full bg-[var(--color-brand-gold)] grid place-items-center text-[var(--color-brand-ink)] text-center text-[10px] uppercase tracking-[0.18em] font-extrabold shadow-[inset_0_4px_10px_rgba(255,255,255,0.4),inset_0_-6px_14px_rgba(0,0,0,0.25)]">
+              <div>
+                10<span className="text-[8px] align-top">AM</span>
+                <div className="text-[8px] mt-0.5 opacity-80">every day</div>
+              </div>
             </div>
           </div>
           {/* corner card */}
@@ -411,19 +424,22 @@ function Collection() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8" style={{ perspective: "1400px" }}>
           {cards.map((c, i) => (
             <article
               key={i}
-              className="group relative rounded-3xl p-6 pb-8 overflow-hidden border border-[var(--color-brand-umber)]/15 shadow-[0_30px_60px_-30px_rgba(58,31,23,0.4)] transition-transform duration-500 hover:-translate-y-2"
-              style={{ background: c.tone }}
+              className="group relative rounded-3xl p-6 pb-8 overflow-hidden border border-[var(--color-brand-umber)]/15 shadow-[0_30px_60px_-30px_rgba(58,31,23,0.5)] transition-all duration-500 hover:-translate-y-3 hover:[transform:rotateX(8deg)_rotateY(-8deg)_translateY(-12px)] will-change-transform"
+              style={{ background: c.tone, transformStyle: "preserve-3d" }}
             >
               <div className="absolute inset-0 opacity-30 mix-blend-soft-light"
                 style={{
                   backgroundImage:
                     "radial-gradient(circle at 30% 20%, white 0%, transparent 40%)",
                 }} />
-              <div className="relative flex items-start justify-between text-[var(--color-brand-ink)]">
+              {/* glossy highlight */}
+              <div aria-hidden className="pointer-events-none absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                style={{ background: "linear-gradient(115deg, transparent 30%, rgba(255,255,255,0.35) 50%, transparent 70%)" }} />
+              <div className="relative flex items-start justify-between text-[var(--color-brand-ink)]" style={{ transform: "translateZ(40px)" }}>
                 <div>
                   <h3
                     style={{ fontFamily: "var(--font-display)" }}
@@ -435,10 +451,10 @@ function Collection() {
                 </div>
                 <span className="text-xs font-mono opacity-70">0{i + 1}</span>
               </div>
-              <div className="relative h-56 mt-6 grid place-items-center">
+              <div className="relative h-56 mt-6 grid place-items-center" style={{ transform: "translateZ(80px)" }}>
                 <div
-                  className="absolute inset-x-8 bottom-6 h-6 rounded-full blur-xl opacity-50"
-                  style={{ background: "rgba(58,31,23,0.6)" }}
+                  className="absolute inset-x-8 bottom-6 h-6 rounded-full blur-xl opacity-60"
+                  style={{ background: "rgba(4,47,46,0.7)" }}
                 />
                 <img
                   src={c.img}
@@ -446,11 +462,11 @@ function Collection() {
                   loading="lazy"
                   width={1024}
                   height={1024}
-                  className="relative w-[90%] max-h-56 object-contain drop-shadow-[0_30px_25px_rgba(0,0,0,0.35)] transition-transform duration-700 group-hover:scale-110 group-hover:-rotate-6"
+                  className="relative w-[90%] max-h-56 object-contain drop-shadow-[0_30px_25px_rgba(0,0,0,0.4)] transition-transform duration-700 group-hover:scale-110 group-hover:-rotate-6 group-hover:[transform:translateZ(120px)_scale(1.15)_rotate(-8deg)]"
                   style={{ transform: `rotate(${c.rot})` }}
                 />
               </div>
-              <div className="relative flex items-center justify-between mt-4 text-[var(--color-brand-ink)]">
+              <div className="relative flex items-center justify-between mt-4 text-[var(--color-brand-ink)]" style={{ transform: "translateZ(40px)" }}>
                 <span className="text-xs uppercase tracking-[0.2em] opacity-70">
                   In-store
                 </span>
@@ -506,7 +522,7 @@ function Visit({ mapUrl }: { mapUrl: string }) {
               </address>
 
               <div className="mt-8 grid sm:grid-cols-2 gap-4">
-                <InfoTile icon={<ClockIcon />} title="Hours" body="Opens 10 AM (working days)" />
+                <InfoTile icon={<ClockIcon />} title="Open Daily" body="From 10 AM — until you walk in, you're a customer" />
                 <InfoTile icon={<CashIcon />} title="Payment" body="Cash · ask in store" />
                 <InfoTile icon={<ParkingIcon />} title="Parking" body="Available for customers" />
                 <InfoTile icon={<PhoneIcon />} title="Phone" body="2382249523" />
@@ -667,8 +683,8 @@ function Faq() {
   const items = [
     ["Where is Atul Footwear located?", "Lahoti Landmark, in front of Shoppers Stop, Sawe Wadi, Latur — 413512, Maharashtra."],
     ["What is the contact number?", "Call 2382249523 for inquiries."],
-    ["What are the working hours?", "Doors open at 10 AM on working days. Please call to confirm closing time."],
-    ["Is the shop open on Sunday?", "Listed as open on working days from 10 AM — please call to confirm Sunday availability."],
+    ["What are the working hours?", "Open daily from 10 AM — and once you step in, you're a customer for life. Call ahead to confirm closing time."],
+    ["Is the shop open on Sunday?", "Yes — Atul Footwear is open every day from 10 AM, Sundays included."],
     ["What payment methods are accepted?", "Cash is accepted. Confirm other payment options directly with the shop."],
     ["Is parking available?", "Yes — customer parking is available at the shop."],
     ["What kind of footwear do you stock?", "Formal leather, sneakers, sandals, Kolhapuris, school shoes and more."],
@@ -735,7 +751,7 @@ function Footer() {
           <div>
             <div className="text-[11px] uppercase tracking-[0.22em] text-[var(--color-brand-gold)] mb-2">Contact</div>
             <a href="tel:+912382249523" className="hover:text-[var(--color-brand-gold)]">2382249523</a>
-            <br /> Opens 10 AM (working days)
+            <br /> Open daily · from 10 AM
           </div>
           <div>
             <div className="text-[11px] uppercase tracking-[0.22em] text-[var(--color-brand-gold)] mb-2">Explore</div>
