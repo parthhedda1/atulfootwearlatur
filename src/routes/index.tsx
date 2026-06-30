@@ -665,7 +665,7 @@ function About() {
 
 function Faq() {
   const items = [
-    ["Where is Atul Footwear located?", "Opposite Regal Cinema, Lahoti Landmark, Sawe Wadi, Latur — 413512, Maharashtra."],
+    ["Where is Atul Footwear located?", "Lahoti Landmark, in front of Shoppers Stop, Sawe Wadi, Latur — 413512, Maharashtra."],
     ["What is the contact number?", "Call 2382249523 for inquiries."],
     ["What are the working hours?", "Doors open at 10 AM on working days. Please call to confirm closing time."],
     ["Is the shop open on Sunday?", "Listed as open on working days from 10 AM — please call to confirm Sunday availability."],
