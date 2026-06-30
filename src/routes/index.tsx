@@ -29,7 +29,7 @@ function Index() {
   const mapUrl =
     "https://www.google.com/maps/search/?api=1&query=" +
     encodeURIComponent(
-      "Opposite Regal Cinema, Dayaram Road, Subhas Chowk, Latur, 413512, Maharashtra, India",
+      "Lahoti Landmark, In front of Shoppers Stop, Sawe Wadi, Latur, 413512, Maharashtra, India",
     );
 
   return (
