@@ -12,7 +12,7 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "Step into Atul Footwear at Subhas Chowk, Latur. Curated leather shoes, sandals & sneakers with expert fitting. Call 2382249523.",
+          "Step into Atul Footwear at Lahoti Landmark, Sawe Wadi, Latur. Curated leather shoes, sandals & sneakers with expert fitting. Call 2382249523.",
       },
       { property: "og:title", content: "Atul Footwear — Latur" },
       {
@@ -80,7 +80,7 @@ function Header() {
           <a href="#faq" className="hover:text-[var(--color-brand-ochre)] transition">FAQ</a>
         </nav>
         <a
-          href="tel:2382249523"
+          href="tel:+912382249523"
           className="group relative inline-flex items-center gap-2 rounded-full bg-[var(--color-brand-ink)] text-[var(--color-brand-cream)] px-4 py-2 text-sm font-medium shadow-[0_8px_20px_-8px_rgba(58,31,23,0.6)] hover:translate-y-[-1px] transition-all"
         >
           <span className="relative flex h-2 w-2">
@@ -157,7 +157,7 @@ function Hero() {
         <div>
           <div className="inline-flex items-center gap-2 rounded-full border border-[var(--color-brand-umber)]/20 bg-[var(--color-brand-cream)]/70 backdrop-blur px-3 py-1 text-xs uppercase tracking-[0.18em] text-[var(--color-brand-umber)]">
             <span className="size-1.5 rounded-full bg-[var(--color-brand-ochre)]" />
-            Subhas Chowk · Latur
+            Sawe Wadi · Latur
           </div>
           <h1
             className="mt-5 text-5xl sm:text-6xl md:text-7xl font-black leading-[0.95] tracking-tight text-[var(--color-brand-ink)]"
@@ -203,7 +203,7 @@ function Hero() {
 
           <div className="mt-8 flex flex-wrap items-center gap-3">
             <a
-              href="tel:2382249523"
+              href="tel:+912382249523"
               className="group inline-flex items-center gap-2 rounded-full bg-[var(--color-brand-ink)] text-[var(--color-brand-cream)] px-6 py-3.5 text-sm font-semibold shadow-[0_18px_40px_-18px_rgba(58,31,23,0.8)] hover:translate-y-[-2px] transition"
             >
               Call 2382249523
@@ -455,7 +455,7 @@ function Collection() {
                   In-store
                 </span>
                 <a
-                  href="tel:2382249523"
+                  href="tel:+912382249523"
                   className="inline-flex items-center gap-1 text-sm font-semibold border-b border-[var(--color-brand-ink)]/40 hover:border-[var(--color-brand-ink)] transition"
                 >
                   Enquire →
@@ -500,7 +500,7 @@ function Visit({ mapUrl }: { mapUrl: string }) {
                 <span className="italic font-light text-[var(--color-brand-gold)]">Cinema</span>.
               </h2>
               <address className="not-italic mt-6 text-[var(--color-brand-cream)]/85 text-base leading-relaxed">
-                Dayaram Road, Subhas Chowk
+                Lahoti Landmark, Sawe Wadi
                 <br />
                 Latur — 413512, Maharashtra, India
               </address>
@@ -514,7 +514,7 @@ function Visit({ mapUrl }: { mapUrl: string }) {
 
               <div className="mt-8 flex flex-wrap gap-3">
                 <a
-                  href="tel:2382249523"
+                  href="tel:+912382249523"
                   className="inline-flex items-center gap-2 rounded-full bg-[var(--color-brand-gold)] text-[var(--color-brand-ink)] px-6 py-3 text-sm font-bold hover:translate-y-[-2px] transition shadow-[0_18px_40px_-10px_rgba(232,184,106,0.6)]"
                 >
                   <PhoneIcon className="size-4" />
@@ -585,7 +585,7 @@ function InfoTile({ icon, title, body }: { icon: React.ReactNode; title: string;
 
 function Why() {
   const items = [
-    { t: "Prime Location", b: "Right at Subhas Chowk — easy from anywhere in Latur.", n: "01" },
+    { t: "Prime Location", b: "Right at Lahoti Landmark, Sawe Wadi — easy from anywhere in Latur.", n: "01" },
     { t: "Expert Staff", b: "Honest guidance on fit, finish, and material — every visit.", n: "02" },
     { t: "Curated Range", b: "Formals, sneakers, sandals & seasonal picks, chosen by hand.", n: "03" },
     { t: "Parking Friendly", b: "Pull up and step in — customer parking available.", n: "04" },
@@ -650,7 +650,7 @@ function About() {
         >
           “Atul Footwear is a neighbourhood shoe shop at{" "}
           <span className="italic font-extrabold">Opposite Regal Cinema</span>,
-          Dayaram Road, Subhas Chowk, Latur — serving the city with quality
+          Lahoti Landmark, Sawe Wadi, Latur — serving the city with quality
           footwear, careful fitting, and a warm welcome.”
         </p>
         <p className="mt-6 text-sm text-[var(--color-brand-umber)]/70">
@@ -665,14 +665,14 @@ function About() {
 
 function Faq() {
   const items = [
-    ["Where is Atul Footwear located?", "Opposite Regal Cinema, Dayaram Road, Subhas Chowk, Latur — 413512, Maharashtra."],
+    ["Where is Atul Footwear located?", "Opposite Regal Cinema, Lahoti Landmark, Sawe Wadi, Latur — 413512, Maharashtra."],
     ["What is the contact number?", "Call 2382249523 for inquiries."],
     ["What are the working hours?", "Doors open at 10 AM on working days. Please call to confirm closing time."],
     ["Is the shop open on Sunday?", "Listed as open on working days from 10 AM — please call to confirm Sunday availability."],
     ["What payment methods are accepted?", "Cash is accepted. Confirm other payment options directly with the shop."],
     ["Is parking available?", "Yes — customer parking is available at the shop."],
     ["What kind of footwear do you stock?", "Formal leather, sneakers, sandals, Kolhapuris, school shoes and more."],
-    ["How do I get there?", "Tap the map button above for turn-by-turn directions to Subhas Chowk."],
+    ["How do I get there?", "Tap the map button above for turn-by-turn directions to Sawe Wadi (Lahoti Landmark)."],
   ];
   return (
     <section id="faq" className="relative py-24 md:py-32">
@@ -729,12 +729,12 @@ function Footer() {
         <div className="mt-10 grid md:grid-cols-3 gap-8 text-sm text-[var(--color-brand-cream)]/80 border-t border-[var(--color-brand-cream)]/15 pt-10">
           <div>
             <div className="text-[11px] uppercase tracking-[0.22em] text-[var(--color-brand-gold)] mb-2">Visit</div>
-            Opposite Regal Cinema, Dayaram Road,
-            <br /> Subhas Chowk, Latur — 413512
+            Lahoti Landmark, In Front of Shoppers Stop,
+            <br /> Sawe Wadi, Latur — 413512
           </div>
           <div>
             <div className="text-[11px] uppercase tracking-[0.22em] text-[var(--color-brand-gold)] mb-2">Contact</div>
-            <a href="tel:2382249523" className="hover:text-[var(--color-brand-gold)]">2382249523</a>
+            <a href="tel:+912382249523" className="hover:text-[var(--color-brand-gold)]">2382249523</a>
             <br /> Opens 10 AM (working days)
           </div>
           <div>
