@@ -554,7 +554,7 @@ function Visit({ mapUrl }: { mapUrl: string }) {
                     style={{ fontFamily: "var(--font-display)" }}
                     className="text-2xl font-extrabold mt-1"
                   >
-                    Subhas Chowk
+                    Sawe Wadi
                   </div>
                 </div>
                 <div className="size-12 rounded-full bg-[var(--color-brand-gold)] text-[var(--color-brand-ink)] grid place-items-center shadow-lg group-hover:rotate-12 transition">
