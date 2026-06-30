@@ -411,19 +411,22 @@ function Collection() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8" style={{ perspective: "1400px" }}>
           {cards.map((c, i) => (
             <article
               key={i}
-              className="group relative rounded-3xl p-6 pb-8 overflow-hidden border border-[var(--color-brand-umber)]/15 shadow-[0_30px_60px_-30px_rgba(58,31,23,0.4)] transition-transform duration-500 hover:-translate-y-2"
-              style={{ background: c.tone }}
+              className="group relative rounded-3xl p-6 pb-8 overflow-hidden border border-[var(--color-brand-umber)]/15 shadow-[0_30px_60px_-30px_rgba(58,31,23,0.5)] transition-all duration-500 hover:-translate-y-3 hover:[transform:rotateX(8deg)_rotateY(-8deg)_translateY(-12px)] will-change-transform"
+              style={{ background: c.tone, transformStyle: "preserve-3d" }}
             >
               <div className="absolute inset-0 opacity-30 mix-blend-soft-light"
                 style={{
                   backgroundImage:
                     "radial-gradient(circle at 30% 20%, white 0%, transparent 40%)",
                 }} />
-              <div className="relative flex items-start justify-between text-[var(--color-brand-ink)]">
+              {/* glossy highlight */}
+              <div aria-hidden className="pointer-events-none absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                style={{ background: "linear-gradient(115deg, transparent 30%, rgba(255,255,255,0.35) 50%, transparent 70%)" }} />
+              <div className="relative flex items-start justify-between text-[var(--color-brand-ink)]" style={{ transform: "translateZ(40px)" }}>
                 <div>
                   <h3
                     style={{ fontFamily: "var(--font-display)" }}
@@ -435,10 +438,10 @@ function Collection() {
                 </div>
                 <span className="text-xs font-mono opacity-70">0{i + 1}</span>
               </div>
-              <div className="relative h-56 mt-6 grid place-items-center">
+              <div className="relative h-56 mt-6 grid place-items-center" style={{ transform: "translateZ(80px)" }}>
                 <div
-                  className="absolute inset-x-8 bottom-6 h-6 rounded-full blur-xl opacity-50"
-                  style={{ background: "rgba(58,31,23,0.6)" }}
+                  className="absolute inset-x-8 bottom-6 h-6 rounded-full blur-xl opacity-60"
+                  style={{ background: "rgba(4,47,46,0.7)" }}
                 />
                 <img
                   src={c.img}
@@ -446,11 +449,11 @@ function Collection() {
                   loading="lazy"
                   width={1024}
                   height={1024}
-                  className="relative w-[90%] max-h-56 object-contain drop-shadow-[0_30px_25px_rgba(0,0,0,0.35)] transition-transform duration-700 group-hover:scale-110 group-hover:-rotate-6"
+                  className="relative w-[90%] max-h-56 object-contain drop-shadow-[0_30px_25px_rgba(0,0,0,0.4)] transition-transform duration-700 group-hover:scale-110 group-hover:-rotate-6 group-hover:[transform:translateZ(120px)_scale(1.15)_rotate(-8deg)]"
                   style={{ transform: `rotate(${c.rot})` }}
                 />
               </div>
-              <div className="relative flex items-center justify-between mt-4 text-[var(--color-brand-ink)]">
+              <div className="relative flex items-center justify-between mt-4 text-[var(--color-brand-ink)]" style={{ transform: "translateZ(40px)" }}>
                 <span className="text-xs uppercase tracking-[0.2em] opacity-70">
                   In-store
                 </span>
