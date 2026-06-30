@@ -649,9 +649,9 @@ function About() {
           className="text-2xl md:text-4xl font-light leading-snug text-[var(--color-brand-ink)]"
         >
           “Atul Footwear is a neighbourhood shoe shop at{" "}
-          <span className="italic font-extrabold">Opposite Regal Cinema</span>,
-          Lahoti Landmark, Sawe Wadi, Latur — serving the city with quality
-          footwear, careful fitting, and a warm welcome.”
+          <span className="italic font-extrabold">Lahoti Landmark</span>, in
+          front of Shoppers Stop, Sawe Wadi, Latur — serving the city with
+          quality footwear, careful fitting, and a warm welcome.”
         </p>
         <p className="mt-6 text-sm text-[var(--color-brand-umber)]/70">
           Hours and payment options are indicative. Please confirm directly with the shop.
