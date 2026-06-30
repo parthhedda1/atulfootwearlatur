@@ -268,16 +268,29 @@ function Hero() {
               animation: "float 6s ease-in-out infinite",
             }}
           />
-          {/* sticker badge */}
+          {/* spinning "Open Daily" coin badge */}
           <div
-            className="absolute right-2 md:right-0 top-4 md:top-8 size-24 md:size-28 rounded-full bg-[var(--color-brand-ink)] text-[var(--color-brand-cream)] grid place-items-center text-center text-[10px] uppercase tracking-[0.2em] font-semibold shadow-[0_18px_30px_-10px_rgba(0,0,0,0.5)]"
-            style={{ transform: "rotate(-12deg)", animation: "float 7s ease-in-out infinite" }}
+            className="absolute right-2 md:right-0 top-4 md:top-8 size-28 md:size-32"
+            style={{ animation: "float 7s ease-in-out infinite", perspective: "600px" }}
           >
-            <div>
-              Hand
-              <br />
-              picked
-              <br />in Latur
+            <div
+              className="absolute inset-0 rounded-full bg-[var(--color-brand-ink)] text-[var(--color-brand-gold)] shadow-[inset_0_-6px_18px_rgba(0,0,0,0.5),0_18px_30px_-10px_rgba(0,0,0,0.5)]"
+              style={{ animation: "spin 18s linear infinite" }}
+            >
+              <svg viewBox="0 0 100 100" className="absolute inset-0 w-full h-full">
+                <defs>
+                  <path id="ring" d="M50,50 m-38,0 a38,38 0 1,1 76,0 a38,38 0 1,1 -76,0" />
+                </defs>
+                <text fontSize="11" fontWeight="700" letterSpacing="2" fill="currentColor" style={{ fontFamily: "var(--font-display)" }}>
+                  <textPath href="#ring">OPEN DAILY · FROM 10 AM · WALK IN · BE FAMILY · </textPath>
+                </text>
+              </svg>
+            </div>
+            <div className="absolute inset-4 rounded-full bg-[var(--color-brand-gold)] grid place-items-center text-[var(--color-brand-ink)] text-center text-[10px] uppercase tracking-[0.18em] font-extrabold shadow-[inset_0_4px_10px_rgba(255,255,255,0.4),inset_0_-6px_14px_rgba(0,0,0,0.25)]">
+              <div>
+                10<span className="text-[8px] align-top">AM</span>
+                <div className="text-[8px] mt-0.5 opacity-80">every day</div>
+              </div>
             </div>
           </div>
           {/* corner card */}
