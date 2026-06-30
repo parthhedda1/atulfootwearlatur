@@ -18,7 +18,7 @@ export const Route = createFileRoute("/")({
       {
         property: "og:description",
         content:
-          "Curated footwear and expert fitting in the heart of Latur. Visit Atul Footwear opposite Regal Cinema, Subhas Chowk.",
+          "Curated footwear and expert fitting in the heart of Latur. Visit Atul Footwear at Lahoti Landmark, in front of Shoppers Stop, Sawe Wadi.",
       },
     ],
   }),
