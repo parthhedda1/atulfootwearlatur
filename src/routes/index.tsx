@@ -496,8 +496,8 @@ function Visit({ mapUrl }: { mapUrl: string }) {
                 style={{ fontFamily: "var(--font-display)" }}
                 className="text-4xl md:text-5xl font-black leading-tight"
               >
-                Opposite Regal{" "}
-                <span className="italic font-light text-[var(--color-brand-gold)]">Cinema</span>.
+                In front of{" "}
+                <span className="italic font-light text-[var(--color-brand-gold)]">Shoppers Stop</span>.
               </h2>
               <address className="not-italic mt-6 text-[var(--color-brand-cream)]/85 text-base leading-relaxed">
                 Lahoti Landmark, Sawe Wadi
