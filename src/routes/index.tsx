@@ -27,9 +27,9 @@ export const Route = createFileRoute("/")({
 
 function Index() {
   const mapUrl =
-    "https://www.google.com/maps/search/?api=1&query=" +
+    "https://www.google.com/maps/dir/?api=1&destination=" +
     encodeURIComponent(
-      "Lahoti Landmark, In front of Shoppers Stop, Sawe Wadi, Latur, 413512, Maharashtra, India",
+      "Atul Footwear, Lahoti Landmark, In front of Shoppers Stop, Sawe Wadi, Latur, 413512, Maharashtra, India",
     );
 
   return (
@@ -523,7 +523,7 @@ function Visit({ mapUrl }: { mapUrl: string }) {
 
               <div className="mt-8 grid sm:grid-cols-2 gap-4">
                 <InfoTile icon={<ClockIcon />} title="Open Daily" body="From 10 AM — until you walk in, you're a customer" />
-                <InfoTile icon={<CashIcon />} title="Payment" body="Cash · ask in store" />
+                <InfoTile icon={<CashIcon />} title="Payment" body="Cash · UPI · Card" />
                 <InfoTile icon={<ParkingIcon />} title="Parking" body="Available for customers" />
                 <InfoTile icon={<PhoneIcon />} title="Phone" body="2382249523" />
               </div>
@@ -685,10 +685,11 @@ function Faq() {
     ["What is the contact number?", "Call 2382249523 for inquiries."],
     ["What are the working hours?", "Open daily from 10 AM — and once you step in, you're a customer for life. Call ahead to confirm closing time."],
     ["Is the shop open on Sunday?", "Yes — Atul Footwear is open every day from 10 AM, Sundays included."],
-    ["What payment methods are accepted?", "Cash is accepted. Confirm other payment options directly with the shop."],
+    ["What payment methods are accepted?", "We accept Cash, UPI, and Card payments for your convenience."],
     ["Is parking available?", "Yes — customer parking is available at the shop."],
     ["What kind of footwear do you stock?", "Formal leather, sneakers, sandals, Kolhapuris, school shoes and more."],
     ["How do I get there?", "Tap the map button above for turn-by-turn directions to Sawe Wadi (Lahoti Landmark)."],
+    ["Why should you trust Atul?", "Atul Footwear has built its name on honest pricing, genuine quality, and personal service. Every pair is hand-picked, every customer is treated like family, and our reputation in Latur speaks for itself."],
   ];
   return (
     <section id="faq" className="relative py-24 md:py-32">
