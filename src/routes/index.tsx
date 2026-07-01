@@ -3,22 +3,32 @@ import { useEffect, useRef, useState } from "react";
 import featuredShoe from "../assets/featured-shoe.png";
 import sneaker from "../assets/sneaker.png";
 import sandal from "../assets/sandal.png";
-import shopHero from "../assets/shop-hero.jpg";
+import atulLogo from "../assets/atul-logo.webp.asset.json";
+import storeWall from "../assets/store-wall.png.asset.json";
+import storeInterior from "../assets/store-interior.png.asset.json";
+
+const PHONE_DISPLAY = "+91 98905 57555";
+const PHONE_TEL = "+919890557555";
+const INSTAGRAM_URL = "https://www.instagram.com/atulfootwear?igsh=ZDJnZzk3d2F3OG1o";
+const ADDRESS_FULL =
+  "Atul Footwear, Lahoti Landmark, Chainsukh Road, opp. Shopper Stop, Hatte Nagar, Latur, Maharashtra 413512";
+const MAPS_EMBED_SRC =
+  "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7571.581742415945!2d76.58128237549558!3d18.40236668266841!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcf839772e3dbc7%3A0x49b80c864d403e03!2sAtul%20Footwear!5e0!3m2!1sen!2sin!4v1782892178305!5m2!1sen!2sin";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Atul Footwear — Crafted Footwear in Latur Since Decades" },
+      { title: "Atul Footwear — Sole to Soul Since 1932 · Latur" },
       {
         name: "description",
         content:
-          "Step into Atul Footwear at Lahoti Landmark, Sawe Wadi, Latur. Curated leather shoes, sandals & sneakers with expert fitting. Call 2382249523.",
+          "Atul Footwear, Latur — trusted since 1932. Lahoti Landmark, Chainsukh Road, opp. Shopper Stop, Hatte Nagar. Call +91 98905 57555.",
       },
-      { property: "og:title", content: "Atul Footwear — Latur" },
+      { property: "og:title", content: "Atul Footwear — Sole to Soul Since 1932" },
       {
         property: "og:description",
         content:
-          "Curated footwear and expert fitting in the heart of Latur. Visit Atul Footwear at Lahoti Landmark, in front of Shoppers Stop, Sawe Wadi.",
+          "Curated footwear and expert fitting in the heart of Latur since 1932. Visit us at Lahoti Landmark, opp. Shopper Stop, Hatte Nagar.",
       },
     ],
   }),
@@ -28,9 +38,7 @@ export const Route = createFileRoute("/")({
 function Index() {
   const mapUrl =
     "https://www.google.com/maps/dir/?api=1&destination=" +
-    encodeURIComponent(
-      "Atul Footwear, Lahoti Landmark, In front of Shoppers Stop, Sawe Wadi, Latur, 413512, Maharashtra, India",
-    );
+    encodeURIComponent(ADDRESS_FULL);
 
   return (
     <div
@@ -59,19 +67,15 @@ function Header() {
   return (
     <header className="sticky top-0 z-50 backdrop-blur-md bg-[color-mix(in_oklab,var(--color-brand-cream)_70%,transparent)] border-b border-[color-mix(in_oklab,var(--color-brand-ink)_10%,transparent)]">
       <div className="max-w-6xl mx-auto px-5 md:px-8 h-16 flex items-center justify-between">
-        <a href="#top" className="flex items-center gap-2">
-          <Monogram />
-          <div className="flex flex-col leading-none">
-            <span
-              className="text-[var(--color-brand-ink)] font-extrabold tracking-tight text-lg"
-              style={{ fontFamily: "var(--font-display)" }}
-            >
-              Atul Footwear
-            </span>
-            <span className="text-[10px] uppercase tracking-[0.2em] text-[var(--color-brand-umber)]/70">
-              Est. Latur · Maharashtra
-            </span>
-          </div>
+        <a href="#top" className="flex items-center gap-3">
+          <img
+            src={atulLogo.url}
+            alt="Atul Footwear logo"
+            className="h-10 w-auto object-contain"
+          />
+          <span className="hidden sm:inline text-[10px] uppercase tracking-[0.2em] text-[var(--color-brand-umber)]/70">
+            Sole to Soul Since 1932
+          </span>
         </a>
         <nav className="hidden md:flex items-center gap-8 text-sm text-[var(--color-brand-umber)]">
           <a href="#collection" className="hover:text-[var(--color-brand-ochre)] transition">Collection</a>
@@ -79,37 +83,29 @@ function Header() {
           <a href="#about" className="hover:text-[var(--color-brand-ochre)] transition">About</a>
           <a href="#faq" className="hover:text-[var(--color-brand-ochre)] transition">FAQ</a>
         </nav>
-        <a
-          href="tel:+912382249523"
-          className="group relative inline-flex items-center gap-2 rounded-full bg-[var(--color-brand-ink)] text-[var(--color-brand-cream)] px-4 py-2 text-sm font-medium shadow-[0_8px_20px_-8px_rgba(58,31,23,0.6)] hover:translate-y-[-1px] transition-all"
-        >
-          <span className="relative flex h-2 w-2">
-            <span className="absolute inline-flex h-full w-full rounded-full bg-[var(--color-brand-gold)] opacity-75 animate-ping" />
-            <span className="relative inline-flex h-2 w-2 rounded-full bg-[var(--color-brand-gold)]" />
-          </span>
-          Call Shop
-        </a>
+        <div className="flex items-center gap-2">
+          <a
+            href={INSTAGRAM_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Atul Footwear on Instagram"
+            className="hidden sm:grid place-items-center size-9 rounded-full border border-[var(--color-brand-ink)]/15 text-[var(--color-brand-ink)] hover:bg-[var(--color-brand-ink)] hover:text-[var(--color-brand-cream)] transition"
+          >
+            <InstagramIcon className="size-4" />
+          </a>
+          <a
+            href={`tel:${PHONE_TEL}`}
+            className="group relative inline-flex items-center gap-2 rounded-full bg-[var(--color-brand-ink)] text-[var(--color-brand-cream)] px-4 py-2 text-sm font-medium shadow-[0_8px_20px_-8px_rgba(58,31,23,0.6)] hover:translate-y-[-1px] transition-all"
+          >
+            <span className="relative flex h-2 w-2">
+              <span className="absolute inline-flex h-full w-full rounded-full bg-[var(--color-brand-gold)] opacity-75 animate-ping" />
+              <span className="relative inline-flex h-2 w-2 rounded-full bg-[var(--color-brand-gold)]" />
+            </span>
+            Call Shop
+          </a>
+        </div>
       </div>
     </header>
-  );
-}
-
-function Monogram() {
-  return (
-    <div
-      className="relative grid place-items-center size-9 rounded-xl text-[var(--color-brand-cream)] shadow-[inset_0_-3px_0_rgba(0,0,0,0.25),0_6px_18px_-6px_rgba(58,31,23,0.6)]"
-      style={{
-        background:
-          "linear-gradient(135deg, var(--color-brand-ochre), var(--color-brand-umber))",
-      }}
-    >
-      <span
-        style={{ fontFamily: "var(--font-display)" }}
-        className="text-base font-extrabold leading-none"
-      >
-        A
-      </span>
-    </div>
   );
 }
 
@@ -141,7 +137,6 @@ function Hero() {
 
   return (
     <section id="top" className="relative pt-12 pb-28 md:pt-20 md:pb-40">
-      {/* gooey blobs */}
       <div aria-hidden className="pointer-events-none absolute inset-0 overflow-hidden">
         <div
           className="absolute -top-24 -left-24 size-[420px] rounded-full blur-3xl opacity-50"
@@ -157,7 +152,7 @@ function Hero() {
         <div>
           <div className="inline-flex items-center gap-2 rounded-full border border-[var(--color-brand-umber)]/20 bg-[var(--color-brand-cream)]/70 backdrop-blur px-3 py-1 text-xs uppercase tracking-[0.18em] text-[var(--color-brand-umber)]">
             <span className="size-1.5 rounded-full bg-[var(--color-brand-ochre)]" />
-            Sawe Wadi · Latur
+            Hatte Nagar · Latur · Since 1932
           </div>
           <h1
             className="mt-5 text-5xl sm:text-6xl md:text-7xl font-black leading-[0.95] tracking-tight text-[var(--color-brand-ink)]"
@@ -197,16 +192,16 @@ function Hero() {
             .
           </h1>
           <p className="mt-6 max-w-[52ch] text-base md:text-lg text-[var(--color-brand-umber)]/85">
-            A neighbourhood footwear destination in the heart of Latur. Hand-picked
-            leather, expert fitting, and the kind of service you remember.
+            A neighbourhood footwear destination in the heart of Latur — serving generations
+            since 1932. Hand-picked leather, expert fitting, and service you remember.
           </p>
 
           <div className="mt-8 flex flex-wrap items-center gap-3">
             <a
-              href="tel:+912382249523"
+              href={`tel:${PHONE_TEL}`}
               className="group inline-flex items-center gap-2 rounded-full bg-[var(--color-brand-ink)] text-[var(--color-brand-cream)] px-6 py-3.5 text-sm font-semibold shadow-[0_18px_40px_-18px_rgba(58,31,23,0.8)] hover:translate-y-[-2px] transition"
             >
-              Call 2382249523
+              Call {PHONE_DISPLAY}
               <svg className="size-4 transition-transform group-hover:translate-x-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                 <path d="M5 12h14M13 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
@@ -217,14 +212,22 @@ function Hero() {
             >
               Visit the Shop
             </a>
+            <a
+              href={INSTAGRAM_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-full border border-[var(--color-brand-ink)]/20 bg-[var(--color-brand-cream)]/60 backdrop-blur px-5 py-3.5 text-sm font-semibold text-[var(--color-brand-ink)] hover:bg-[var(--color-brand-cream)] transition"
+            >
+              <InstagramIcon className="size-4" /> Instagram
+            </a>
           </div>
 
           <div className="mt-10 flex items-center gap-6">
-            <Stat number="Daily" label="Open every day" />
+            <Stat number="1932" label="Est. Latur" />
             <div className="h-10 w-px bg-[var(--color-brand-umber)]/20" />
-            <Stat number="10 AM" label="Doors open" />
+            <Stat number="10–9:30" label="Mon – Sat" />
             <div className="h-10 w-px bg-[var(--color-brand-umber)]/20" />
-            <Stat number="Free" label="Customer parking" />
+            <Stat number="11–8" label="Sundays" />
           </div>
         </div>
 
@@ -234,7 +237,6 @@ function Hero() {
           className="relative h-[440px] md:h-[560px]"
           style={{ perspective: "1200px" }}
         >
-          {/* rotating ring */}
           <div
             aria-hidden
             className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 size-[380px] md:size-[460px] rounded-full opacity-60"
@@ -245,7 +247,6 @@ function Hero() {
               animation: "spin 22s linear infinite",
             }}
           />
-          {/* sun disc */}
           <div
             className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 size-[280px] md:size-[340px] rounded-full shadow-[inset_0_-30px_60px_rgba(58,31,23,0.35),0_30px_80px_-20px_rgba(58,31,23,0.45)]"
             style={{
@@ -255,7 +256,6 @@ function Hero() {
               transition: "transform 200ms ease-out",
             }}
           />
-          {/* main featured shoe */}
           <img
             src={featuredShoe}
             alt="Premium cognac leather dress shoe from Atul Footwear"
@@ -268,32 +268,13 @@ function Hero() {
               animation: "float 6s ease-in-out infinite",
             }}
           />
-          {/* spinning "Open Daily" coin badge */}
+          {/* logo coin */}
           <div
-            className="absolute right-2 md:right-0 top-4 md:top-8 size-28 md:size-32"
-            style={{ animation: "float 7s ease-in-out infinite", perspective: "600px" }}
+            className="absolute right-2 md:right-0 top-4 md:top-8 size-28 md:size-36 rounded-full bg-[var(--color-brand-cream)] shadow-[inset_0_-6px_18px_rgba(0,0,0,0.15),0_18px_30px_-10px_rgba(0,0,0,0.4)] grid place-items-center p-3 border border-[var(--color-brand-umber)]/20"
+            style={{ animation: "float 7s ease-in-out infinite" }}
           >
-            <div
-              className="absolute inset-0 rounded-full bg-[var(--color-brand-ink)] text-[var(--color-brand-gold)] shadow-[inset_0_-6px_18px_rgba(0,0,0,0.5),0_18px_30px_-10px_rgba(0,0,0,0.5)]"
-              style={{ animation: "spin 18s linear infinite" }}
-            >
-              <svg viewBox="0 0 100 100" className="absolute inset-0 w-full h-full">
-                <defs>
-                  <path id="ring" d="M50,50 m-38,0 a38,38 0 1,1 76,0 a38,38 0 1,1 -76,0" />
-                </defs>
-                <text fontSize="11" fontWeight="700" letterSpacing="2" fill="currentColor" style={{ fontFamily: "var(--font-display)" }}>
-                  <textPath href="#ring">OPEN DAILY · FROM 10 AM · WALK IN · BE FAMILY · </textPath>
-                </text>
-              </svg>
-            </div>
-            <div className="absolute inset-4 rounded-full bg-[var(--color-brand-gold)] grid place-items-center text-[var(--color-brand-ink)] text-center text-[10px] uppercase tracking-[0.18em] font-extrabold shadow-[inset_0_4px_10px_rgba(255,255,255,0.4),inset_0_-6px_14px_rgba(0,0,0,0.25)]">
-              <div>
-                10<span className="text-[8px] align-top">AM</span>
-                <div className="text-[8px] mt-0.5 opacity-80">every day</div>
-              </div>
-            </div>
+            <img src={atulLogo.url} alt="Atul Footwear" className="w-full h-full object-contain" />
           </div>
-          {/* corner card */}
           <div
             className="absolute left-0 bottom-4 md:bottom-10 rounded-2xl bg-[var(--color-brand-cream)]/90 backdrop-blur border border-[var(--color-brand-umber)]/15 p-3 pr-5 flex items-center gap-3 shadow-[0_20px_40px_-20px_rgba(58,31,23,0.4)]"
             style={{ animation: "float 8s ease-in-out infinite" }}
@@ -304,8 +285,8 @@ function Hero() {
               <Dot color="#e8b86a" />
             </div>
             <div className="text-xs">
-              <div className="font-semibold text-[var(--color-brand-ink)]">Many finishes</div>
-              <div className="text-[var(--color-brand-umber)]/70">Tan · Black · Tobacco</div>
+              <div className="font-semibold text-[var(--color-brand-ink)]">Sole to Soul</div>
+              <div className="text-[var(--color-brand-umber)]/70">Since 1932</div>
             </div>
           </div>
         </div>
@@ -389,7 +370,7 @@ function Collection() {
     },
     {
       title: "Sneakers",
-      sub: "Casual · Sport · School",
+      sub: "Campus · Sparx · Abros",
       img: sneaker,
       tone: "linear-gradient(135deg, #faf4e8 0%, #e8b86a 100%)",
       rot: "4deg",
@@ -419,8 +400,8 @@ function Collection() {
             </h2>
           </div>
           <p className="max-w-md text-[var(--color-brand-umber)]/80">
-            A rotating shelf of formals, sneakers, sandals and seasonal pieces — visit in
-            store to see the full lineup.
+            Campus, Sparx, Abros and more — walk in to see the full lineup of formals,
+            sneakers, sandals and seasonal picks.
           </p>
         </div>
 
@@ -436,7 +417,6 @@ function Collection() {
                   backgroundImage:
                     "radial-gradient(circle at 30% 20%, white 0%, transparent 40%)",
                 }} />
-              {/* glossy highlight */}
               <div aria-hidden className="pointer-events-none absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"
                 style={{ background: "linear-gradient(115deg, transparent 30%, rgba(255,255,255,0.35) 50%, transparent 70%)" }} />
               <div className="relative flex items-start justify-between text-[var(--color-brand-ink)]" style={{ transform: "translateZ(40px)" }}>
@@ -471,7 +451,7 @@ function Collection() {
                   In-store
                 </span>
                 <a
-                  href="tel:+912382249523"
+                  href={`tel:${PHONE_TEL}`}
                   className="inline-flex items-center gap-1 text-sm font-semibold border-b border-[var(--color-brand-ink)]/40 hover:border-[var(--color-brand-ink)] transition"
                 >
                   Enquire →
@@ -479,6 +459,22 @@ function Collection() {
               </div>
             </article>
           ))}
+        </div>
+
+        {/* Store photos strip */}
+        <div className="mt-16 grid md:grid-cols-2 gap-6">
+          <figure className="relative rounded-3xl overflow-hidden border border-[var(--color-brand-umber)]/15 shadow-[0_30px_60px_-30px_rgba(58,31,23,0.5)] group">
+            <img src={storeWall.url} alt="Wall of running shoes at Atul Footwear — Campus, Sparx, Abros" className="w-full h-72 object-cover transition-transform duration-1000 group-hover:scale-105" loading="lazy" />
+            <figcaption className="absolute left-4 bottom-4 rounded-full bg-[var(--color-brand-cream)]/90 backdrop-blur px-4 py-1.5 text-xs uppercase tracking-[0.18em] text-[var(--color-brand-ink)] font-semibold">
+              Sports Wall · Campus · Sparx · Abros
+            </figcaption>
+          </figure>
+          <figure className="relative rounded-3xl overflow-hidden border border-[var(--color-brand-umber)]/15 shadow-[0_30px_60px_-30px_rgba(58,31,23,0.5)] group">
+            <img src={storeInterior.url} alt="Women's footwear section inside Atul Footwear" className="w-full h-72 object-cover transition-transform duration-1000 group-hover:scale-105" loading="lazy" />
+            <figcaption className="absolute left-4 bottom-4 rounded-full bg-[var(--color-brand-cream)]/90 backdrop-blur px-4 py-1.5 text-xs uppercase tracking-[0.18em] text-[var(--color-brand-ink)] font-semibold">
+              Women's Section · Heels · Flats · Sandals
+            </figcaption>
+          </figure>
         </div>
       </div>
     </section>
@@ -512,29 +508,31 @@ function Visit({ mapUrl }: { mapUrl: string }) {
                 style={{ fontFamily: "var(--font-display)" }}
                 className="text-4xl md:text-5xl font-black leading-tight"
               >
-                In front of{" "}
-                <span className="italic font-light text-[var(--color-brand-gold)]">Shoppers Stop</span>.
+                Opposite{" "}
+                <span className="italic font-light text-[var(--color-brand-gold)]">Shopper Stop</span>.
               </h2>
               <address className="not-italic mt-6 text-[var(--color-brand-cream)]/85 text-base leading-relaxed">
-                Lahoti Landmark, Sawe Wadi
+                Atul Footwear, Lahoti Landmark,
                 <br />
-                Latur — 413512, Maharashtra, India
+                Chainsukh Road, opp. Shopper Stop,
+                <br />
+                Hatte Nagar, Latur, Maharashtra 413512
               </address>
 
               <div className="mt-8 grid sm:grid-cols-2 gap-4">
-                <InfoTile icon={<ClockIcon />} title="Open Daily" body="From 10 AM — until you walk in, you're a customer" />
+                <InfoTile icon={<ClockIcon />} title="Mon – Sat" body="10:00 AM – 9:30 PM" />
+                <InfoTile icon={<ClockIcon />} title="Sunday" body="11:00 AM – 8:00 PM" />
                 <InfoTile icon={<CashIcon />} title="Payment" body="Cash · UPI · Card" />
-                <InfoTile icon={<ParkingIcon />} title="Parking" body="Available for customers" />
-                <InfoTile icon={<PhoneIcon />} title="Phone" body="2382249523" />
+                <InfoTile icon={<PhoneIcon />} title="Phone" body={PHONE_DISPLAY} />
               </div>
 
               <div className="mt-8 flex flex-wrap gap-3">
                 <a
-                  href="tel:+912382249523"
+                  href={`tel:${PHONE_TEL}`}
                   className="inline-flex items-center gap-2 rounded-full bg-[var(--color-brand-gold)] text-[var(--color-brand-ink)] px-6 py-3 text-sm font-bold hover:translate-y-[-2px] transition shadow-[0_18px_40px_-10px_rgba(232,184,106,0.6)]"
                 >
                   <PhoneIcon className="size-4" />
-                  Call Atul Footwear
+                  Call {PHONE_DISPLAY}
                 </a>
                 <a
                   href={mapUrl}
@@ -543,41 +541,40 @@ function Visit({ mapUrl }: { mapUrl: string }) {
                   className="inline-flex items-center gap-2 rounded-full border border-[var(--color-brand-cream)]/30 text-[var(--color-brand-cream)] px-6 py-3 text-sm font-semibold hover:bg-[var(--color-brand-cream)]/10 transition"
                 >
                   <MapPinIcon className="size-4" />
-                  Open in Google Maps
+                  Directions on Google Maps
+                </a>
+                <a
+                  href={INSTAGRAM_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 rounded-full border border-[var(--color-brand-cream)]/30 text-[var(--color-brand-cream)] px-6 py-3 text-sm font-semibold hover:bg-[var(--color-brand-cream)]/10 transition"
+                >
+                  <InstagramIcon className="size-4" />
+                  @atulfootwear
                 </a>
               </div>
             </div>
 
-            <a
-              href={mapUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="relative block min-h-[320px] md:min-h-full overflow-hidden group"
-            >
-              <img
-                src={shopHero}
-                alt="Atul Footwear shop interior"
+            {/* Live Google map embed */}
+            <div className="relative min-h-[360px] md:min-h-full">
+              <iframe
+                src={MAPS_EMBED_SRC}
+                title="Atul Footwear on Google Maps"
+                className="absolute inset-0 w-full h-full grayscale-[0.15]"
+                style={{ border: 0 }}
+                allowFullScreen
                 loading="lazy"
-                className="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
+                referrerPolicy="strict-origin-when-cross-origin"
               />
-              <div className="absolute inset-0 bg-gradient-to-tr from-[var(--color-brand-ink)]/70 via-transparent to-transparent" />
-              <div className="absolute left-6 bottom-6 right-6 flex items-end justify-between gap-4">
-                <div className="text-[var(--color-brand-cream)]">
-                  <div className="text-[11px] uppercase tracking-[0.22em] opacity-80">
-                    Find us
-                  </div>
-                  <div
-                    style={{ fontFamily: "var(--font-display)" }}
-                    className="text-2xl font-extrabold mt-1"
-                  >
-                    Sawe Wadi
-                  </div>
-                </div>
-                <div className="size-12 rounded-full bg-[var(--color-brand-gold)] text-[var(--color-brand-ink)] grid place-items-center shadow-lg group-hover:rotate-12 transition">
-                  <MapPinIcon className="size-5" />
-                </div>
-              </div>
-            </a>
+              <a
+                href={mapUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="absolute right-4 bottom-4 inline-flex items-center gap-2 rounded-full bg-[var(--color-brand-ink)] text-[var(--color-brand-cream)] px-4 py-2 text-xs font-semibold shadow-lg hover:bg-[var(--color-brand-gold)] hover:text-[var(--color-brand-ink)] transition"
+              >
+                <MapPinIcon className="size-3.5" /> Open in Google Maps
+              </a>
+            </div>
           </div>
         </div>
       </div>
@@ -601,10 +598,10 @@ function InfoTile({ icon, title, body }: { icon: React.ReactNode; title: string;
 
 function Why() {
   const items = [
-    { t: "Prime Location", b: "Right at Lahoti Landmark, Sawe Wadi — easy from anywhere in Latur.", n: "01" },
+    { t: "Since 1932", b: "Four generations of trust — Latur's original footwear house.", n: "01" },
     { t: "Expert Staff", b: "Honest guidance on fit, finish, and material — every visit.", n: "02" },
-    { t: "Curated Range", b: "Formals, sneakers, sandals & seasonal picks, chosen by hand.", n: "03" },
-    { t: "Parking Friendly", b: "Pull up and step in — customer parking available.", n: "04" },
+    { t: "Curated Range", b: "Campus, Sparx, Abros, formals, kolhapuris & more — picked by hand.", n: "03" },
+    { t: "Prime Location", b: "Lahoti Landmark, Chainsukh Road — opp. Shopper Stop, Hatte Nagar.", n: "04" },
   ];
   return (
     <section className="relative py-24 md:py-32">
@@ -664,13 +661,13 @@ function About() {
           style={{ fontFamily: "var(--font-display)" }}
           className="text-2xl md:text-4xl font-light leading-snug text-[var(--color-brand-ink)]"
         >
-          “Atul Footwear is a neighbourhood shoe shop at{" "}
-          <span className="italic font-extrabold">Lahoti Landmark</span>, in
-          front of Shoppers Stop, Sawe Wadi, Latur — serving the city with
-          quality footwear, careful fitting, and a warm welcome.”
+          “Sole to Soul since{" "}
+          <span className="italic font-extrabold">1932</span> — Atul Footwear
+          has been Latur's trusted footwear destination for nearly a century,
+          serving generations with quality, care and a warm welcome.”
         </p>
         <p className="mt-6 text-sm text-[var(--color-brand-umber)]/70">
-          Hours and payment options are indicative. Please confirm directly with the shop.
+          Visit us at Lahoti Landmark, Chainsukh Road, opp. Shopper Stop, Hatte Nagar, Latur.
         </p>
       </div>
     </section>
@@ -681,15 +678,16 @@ function About() {
 
 function Faq() {
   const items = [
-    ["Where is Atul Footwear located?", "Lahoti Landmark, in front of Shoppers Stop, Sawe Wadi, Latur — 413512, Maharashtra."],
-    ["What is the contact number?", "Call 2382249523 for inquiries."],
-    ["What are the working hours?", "Open daily from 10 AM — and once you step in, you're a customer for life. Call ahead to confirm closing time."],
-    ["Is the shop open on Sunday?", "Yes — Atul Footwear is open every day from 10 AM, Sundays included."],
+    ["Where is Atul Footwear located?", "Lahoti Landmark, Chainsukh Road, opposite Shopper Stop, Hatte Nagar, Latur — 413512, Maharashtra."],
+    ["What is the contact number?", `Call ${PHONE_DISPLAY} for inquiries.`],
+    ["What are the working hours?", "Monday to Saturday: 10:00 AM – 9:30 PM. Sunday: 11:00 AM – 8:00 PM."],
+    ["Is the shop open on Sunday?", "Yes — we're open on Sundays from 11:00 AM to 8:00 PM."],
     ["What payment methods are accepted?", "We accept Cash, UPI, and Card payments for your convenience."],
     ["Is parking available?", "Yes — customer parking is available at the shop."],
-    ["What kind of footwear do you stock?", "Formal leather, sneakers, sandals, Kolhapuris, school shoes and more."],
-    ["How do I get there?", "Tap the map button above for turn-by-turn directions to Sawe Wadi (Lahoti Landmark)."],
-    ["Why should you trust Atul?", "Atul Footwear has built its name on honest pricing, genuine quality, and personal service. Every pair is hand-picked, every customer is treated like family, and our reputation in Latur speaks for itself."],
+    ["What kind of footwear do you stock?", "Formal leather, sneakers (Campus, Sparx, Abros and more), sandals, Kolhapuris, school shoes, and women's & kids' footwear."],
+    ["How do I get there?", "Tap the map above for turn-by-turn directions to Lahoti Landmark, Chainsukh Road, Hatte Nagar."],
+    ["Are you on Instagram?", "Yes — follow @atulfootwear on Instagram for new arrivals and updates."],
+    ["Why should you trust Atul?", "Atul Footwear has served Latur since 1932. Four generations of honest pricing, genuine quality and personal service — every pair hand-picked, every customer treated like family."],
   ];
   return (
     <section id="faq" className="relative py-24 md:py-32">
@@ -743,16 +741,25 @@ function Footer() {
         >
           Atul <span className="italic font-light text-[var(--color-brand-gold)]">Footwear</span>
         </div>
+        <div className="text-center mt-3 text-[11px] uppercase tracking-[0.3em] text-[var(--color-brand-gold)]">
+          Sole to Soul · Since 1932
+        </div>
         <div className="mt-10 grid md:grid-cols-3 gap-8 text-sm text-[var(--color-brand-cream)]/80 border-t border-[var(--color-brand-cream)]/15 pt-10">
           <div>
             <div className="text-[11px] uppercase tracking-[0.22em] text-[var(--color-brand-gold)] mb-2">Visit</div>
-            Lahoti Landmark, In Front of Shoppers Stop,
-            <br /> Sawe Wadi, Latur — 413512
+            Lahoti Landmark, Chainsukh Road,
+            <br /> opp. Shopper Stop, Hatte Nagar,
+            <br /> Latur, Maharashtra 413512
           </div>
           <div>
             <div className="text-[11px] uppercase tracking-[0.22em] text-[var(--color-brand-gold)] mb-2">Contact</div>
-            <a href="tel:+912382249523" className="hover:text-[var(--color-brand-gold)]">2382249523</a>
-            <br /> Open daily · from 10 AM
+            <a href={`tel:${PHONE_TEL}`} className="hover:text-[var(--color-brand-gold)]">{PHONE_DISPLAY}</a>
+            <br /> Mon–Sat 10 AM – 9:30 PM
+            <br /> Sun 11 AM – 8 PM
+            <br />
+            <a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 mt-2 hover:text-[var(--color-brand-gold)]">
+              <InstagramIcon className="size-4" /> @atulfootwear
+            </a>
           </div>
           <div>
             <div className="text-[11px] uppercase tracking-[0.22em] text-[var(--color-brand-gold)] mb-2">Explore</div>
@@ -780,14 +787,6 @@ function ClockIcon({ className }: { className?: string }) {
     </svg>
   );
 }
-function ParkingIcon({ className }: { className?: string }) {
-  return (
-    <svg className={className} fill="none" viewBox="0 0 24 24" strokeWidth={1.8} stroke="currentColor">
-      <rect x="4" y="4" width="16" height="16" rx="3" />
-      <path strokeLinecap="round" d="M10 16V8h3.5a2.5 2.5 0 0 1 0 5H10" />
-    </svg>
-  );
-}
 function CashIcon({ className }: { className?: string }) {
   return (
     <svg className={className} fill="none" viewBox="0 0 24 24" strokeWidth={1.8} stroke="currentColor">
@@ -808,6 +807,15 @@ function MapPinIcon({ className }: { className?: string }) {
     <svg className={className} fill="none" viewBox="0 0 24 24" strokeWidth={1.8} stroke="currentColor">
       <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
       <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" />
+    </svg>
+  );
+}
+function InstagramIcon({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8}>
+      <rect x="3" y="3" width="18" height="18" rx="5" />
+      <circle cx="12" cy="12" r="4" />
+      <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
     </svg>
   );
 }
