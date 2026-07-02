@@ -214,6 +214,14 @@ function Hero() {
               Visit the Shop
             </a>
             <a
+              href={WHATSAPP_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-full bg-[#25D366] text-white px-5 py-3.5 text-sm font-semibold shadow-[0_18px_40px_-18px_rgba(37,211,102,0.8)] hover:translate-y-[-2px] transition"
+            >
+              <WhatsAppIcon className="size-4" /> WhatsApp
+            </a>
+            <a
               href={INSTAGRAM_URL}
               target="_blank"
               rel="noopener noreferrer"
