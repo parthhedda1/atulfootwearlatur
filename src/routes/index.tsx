@@ -223,12 +223,34 @@ function Hero() {
             </a>
           </div>
 
-          <div className="mt-10 flex items-center gap-6">
-            <Stat number="1932" label="Est. Latur" />
-            <div className="h-10 w-px bg-[var(--color-brand-umber)]/20" />
-            <Stat number="10–9:30" label="Mon – Sat" />
-            <div className="h-10 w-px bg-[var(--color-brand-umber)]/20" />
-            <Stat number="11–8" label="Sundays" />
+          <div className="mt-10 relative rounded-3xl border border-[var(--color-brand-umber)]/15 bg-gradient-to-br from-[var(--color-brand-cream)] to-[var(--color-brand-clay)]/50 p-5 shadow-[0_20px_60px_-30px_rgba(4,47,46,0.35)]">
+            <div className="absolute -top-3 left-5 px-3 py-1 rounded-full bg-[var(--color-brand-ink)] text-[10px] font-bold uppercase tracking-[0.25em] text-[var(--color-brand-gold)]">
+              ● Open Today
+            </div>
+            <div className="flex items-stretch gap-4">
+              <div className="flex-1">
+                <div className="text-[10px] uppercase tracking-[0.28em] text-[var(--color-brand-umber)]/70">Weekdays</div>
+                <div className="mt-1 font-serif italic text-[var(--color-brand-ink)] text-lg leading-tight">Mon — Sat</div>
+                <div className="mt-1 text-2xl font-black text-[var(--color-brand-ink)] tabular-nums">
+                  10:00<span className="text-xs align-top ml-0.5 text-[var(--color-brand-ochre)]">AM</span>
+                  <span className="mx-1 text-[var(--color-brand-ochre)]">→</span>
+                  9:30<span className="text-xs align-top ml-0.5 text-[var(--color-brand-ochre)]">PM</span>
+                </div>
+              </div>
+              <div className="w-px bg-gradient-to-b from-transparent via-[var(--color-brand-umber)]/30 to-transparent" />
+              <div className="flex-1">
+                <div className="text-[10px] uppercase tracking-[0.28em] text-[var(--color-brand-umber)]/70">Weekend</div>
+                <div className="mt-1 font-serif italic text-[var(--color-brand-ink)] text-lg leading-tight">Sunday</div>
+                <div className="mt-1 text-2xl font-black text-[var(--color-brand-ink)] tabular-nums">
+                  11:00<span className="text-xs align-top ml-0.5 text-[var(--color-brand-ochre)]">AM</span>
+                  <span className="mx-1 text-[var(--color-brand-ochre)]">→</span>
+                  8:00<span className="text-xs align-top ml-0.5 text-[var(--color-brand-ochre)]">PM</span>
+                </div>
+              </div>
+            </div>
+            <div className="mt-3 pt-3 border-t border-dashed border-[var(--color-brand-umber)]/20 text-[11px] text-[var(--color-brand-umber)]/75 italic text-center">
+              "Until you walk in, you're a customer — after that, family."
+            </div>
           </div>
         </div>
 
