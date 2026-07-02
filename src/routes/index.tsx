@@ -150,7 +150,7 @@ function Hero() {
   }, []);
 
   return (
-    <section id="top" className="relative pt-12 pb-28 md:pt-20 md:pb-40">
+    <section id="top" className="relative pt-12 pb-28 md:pt-20 md:pb-40 overflow-hidden">
       <div aria-hidden className="pointer-events-none absolute inset-0 overflow-hidden">
         <div
           className="absolute -top-24 -left-24 size-[420px] rounded-full blur-3xl opacity-50"
@@ -162,14 +162,14 @@ function Hero() {
         />
       </div>
 
-      <div className="relative max-w-6xl mx-auto px-5 md:px-8 grid md:grid-cols-[1.1fr_1fr] gap-10 items-center">
+      <div className="relative max-w-6xl mx-auto px-5 md:px-8 grid md:grid-cols-[1.1fr_1fr] gap-10 items-center overflow-hidden">
         <div>
           <div className="inline-flex items-center gap-2 rounded-full border border-[var(--color-brand-umber)]/20 bg-[var(--color-brand-cream)]/70 backdrop-blur px-3 py-1 text-xs uppercase tracking-[0.18em] text-[var(--color-brand-umber)]">
             <span className="size-1.5 rounded-full bg-[var(--color-brand-ochre)]" />
             Sawe Wadi · Latur · Since 1932
           </div>
           <h1
-            className="mt-5 text-5xl sm:text-6xl md:text-7xl font-black leading-[0.95] tracking-tight text-[var(--color-brand-ink)]"
+            className="mt-5 text-4xl sm:text-6xl md:text-7xl font-black leading-[0.95] tracking-tight text-[var(--color-brand-ink)]"
             style={{ fontFamily: "var(--font-display)" }}
           >
             Step into{" "}
@@ -215,7 +215,7 @@ function Hero() {
               href={`tel:${PHONE_TEL}`}
               className="group inline-flex items-center gap-2 rounded-full bg-[var(--color-brand-ink)] text-[var(--color-brand-cream)] px-6 py-3.5 text-sm font-semibold shadow-[0_18px_40px_-18px_rgba(58,31,23,0.8)] hover:translate-y-[-2px] transition"
             >
-              Call {PHONE_DISPLAY}
+              Call Us
               <svg className="size-4 transition-transform group-hover:translate-x-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                 <path d="M5 12h14M13 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
@@ -249,20 +249,20 @@ function Hero() {
               ● Open Today
             </div>
             <div className="flex items-stretch gap-4">
-              <div className="flex-1">
+              <div className="flex-1 min-w-0">
                 <div className="text-[10px] uppercase tracking-[0.28em] text-[var(--color-brand-umber)]/70">Weekdays</div>
                 <div className="mt-1 font-serif italic text-[var(--color-brand-ink)] text-lg leading-tight">Mon — Sat</div>
-                <div className="mt-1 text-2xl font-black text-[var(--color-brand-ink)] tabular-nums">
+                <div className="mt-1 text-xl font-black text-[var(--color-brand-ink)] tabular-nums">
                   10:00<span className="text-xs align-top ml-0.5 text-[var(--color-brand-ochre)]">AM</span>
                   <span className="mx-1 text-[var(--color-brand-ochre)]">→</span>
                   9:30<span className="text-xs align-top ml-0.5 text-[var(--color-brand-ochre)]">PM</span>
                 </div>
               </div>
               <div className="w-px bg-gradient-to-b from-transparent via-[var(--color-brand-umber)]/30 to-transparent" />
-              <div className="flex-1">
+              <div className="flex-1 min-w-0">
                 <div className="text-[10px] uppercase tracking-[0.28em] text-[var(--color-brand-umber)]/70">Weekend</div>
                 <div className="mt-1 font-serif italic text-[var(--color-brand-ink)] text-lg leading-tight">Sunday</div>
-                <div className="mt-1 text-2xl font-black text-[var(--color-brand-ink)] tabular-nums">
+                <div className="mt-1 text-xl font-black text-[var(--color-brand-ink)] tabular-nums">
                   11:00<span className="text-xs align-top ml-0.5 text-[var(--color-brand-ochre)]">AM</span>
                   <span className="mx-1 text-[var(--color-brand-ochre)]">→</span>
                   8:00<span className="text-xs align-top ml-0.5 text-[var(--color-brand-ochre)]">PM</span>
@@ -734,10 +734,10 @@ function About() {
           style={{ fontFamily: "var(--font-display)" }}
           className="text-2xl md:text-4xl font-light leading-snug text-[var(--color-brand-ink)]"
         >
-          “Sole to Soul since{" "}
+          "Sole to Soul since{" "}
           <span className="italic font-extrabold">1932</span> — Atul Footwear
           has been Latur's trusted footwear destination for nearly a century,
-          serving generations with quality, care and a warm welcome.”
+          serving generations with quality, care and a warm welcome."
         </p>
         <p className="mt-6 text-sm text-[var(--color-brand-umber)]/70">
           Visit us at Lahoti Landmark, Chainsukh Road, opp. Shopper Stop, Sawe Wadi, Latur.
