@@ -586,6 +586,15 @@ function Visit({ mapUrl }: { mapUrl: string }) {
                   Call {PHONE_DISPLAY}
                 </a>
                 <a
+                  href={WHATSAPP_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 rounded-full bg-[#25D366] text-white px-6 py-3 text-sm font-bold hover:translate-y-[-2px] transition shadow-[0_18px_40px_-10px_rgba(37,211,102,0.55)]"
+                >
+                  <WhatsAppIcon className="size-4" />
+                  WhatsApp Us
+                </a>
+                <a
                   href={mapUrl}
                   target="_blank"
                   rel="noopener noreferrer"
