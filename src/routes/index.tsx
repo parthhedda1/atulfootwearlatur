@@ -278,7 +278,7 @@ function Hero() {
         {/* 3D floating shoe stack */}
         <div
           ref={heroRef}
-          className="relative h-[440px] md:h-[560px]"
+          className="relative h-[440px] md:h-[560px] overflow-hidden"
           style={{ perspective: "1200px" }}
         >
           <div
