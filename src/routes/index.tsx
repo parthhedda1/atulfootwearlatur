@@ -10,8 +10,9 @@ import storeInterior from "../assets/store-interior.png.asset.json";
 const PHONE_DISPLAY = "+91 98905 57555";
 const PHONE_TEL = "+919890557555";
 const INSTAGRAM_URL = "https://www.instagram.com/atulfootwear?igsh=ZDJnZzk3d2F3OG1o";
+const WHATSAPP_URL = "https://wa.me/919890557555?text=Hi%20Atul%20Footwear%2C%20I%27d%20like%20to%20enquire%20about%20your%20collection.";
 const ADDRESS_FULL =
-  "Atul Footwear, Lahoti Landmark, Chainsukh Road, opp. Shopper Stop, Hatte Nagar, Latur, Maharashtra 413512";
+  "Atul Footwear, Lahoti Landmark, Chainsukh Road, opp. Shopper Stop, Sawe Wadi, Latur, Maharashtra 413512";
 const MAPS_EMBED_SRC =
   "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7571.581742415945!2d76.58128237549558!3d18.40236668266841!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcf839772e3dbc7%3A0x49b80c864d403e03!2sAtul%20Footwear!5e0!3m2!1sen!2sin!4v1782892178305!5m2!1sen!2sin";
 
@@ -22,13 +23,13 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "Atul Footwear, Latur — trusted since 1932. Lahoti Landmark, Chainsukh Road, opp. Shopper Stop, Hatte Nagar. Call +91 98905 57555.",
+          "Atul Footwear, Latur — trusted since 1932. Lahoti Landmark, Chainsukh Road, opp. Shopper Stop, Sawe Wadi. Call +91 98905 57555.",
       },
       { property: "og:title", content: "Atul Footwear — Sole to Soul Since 1932" },
       {
         property: "og:description",
         content:
-          "Curated footwear and expert fitting in the heart of Latur since 1932. Visit us at Lahoti Landmark, opp. Shopper Stop, Hatte Nagar.",
+          "Curated footwear and expert fitting in the heart of Latur since 1932. Visit us at Lahoti Landmark, opp. Shopper Stop, Sawe Wadi.",
       },
     ],
   }),
@@ -57,6 +58,19 @@ function Index() {
       <About />
       <Faq />
       <Footer />
+      <a
+        href={WHATSAPP_URL}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Chat on WhatsApp"
+        className="fixed bottom-5 right-5 z-50 inline-flex items-center gap-2 rounded-full bg-[#25D366] text-white pl-4 pr-5 py-3 shadow-[0_20px_50px_-10px_rgba(37,211,102,0.7)] hover:scale-105 transition-transform"
+      >
+        <span className="relative flex size-8 items-center justify-center">
+          <span className="absolute inset-0 rounded-full bg-white/30 animate-ping" />
+          <WhatsAppIcon className="size-6 relative" />
+        </span>
+        <span className="hidden sm:inline text-sm font-bold">Chat</span>
+      </a>
     </div>
   );
 }
@@ -152,7 +166,7 @@ function Hero() {
         <div>
           <div className="inline-flex items-center gap-2 rounded-full border border-[var(--color-brand-umber)]/20 bg-[var(--color-brand-cream)]/70 backdrop-blur px-3 py-1 text-xs uppercase tracking-[0.18em] text-[var(--color-brand-umber)]">
             <span className="size-1.5 rounded-full bg-[var(--color-brand-ochre)]" />
-            Hatte Nagar · Latur · Since 1932
+            Sawe Wadi · Latur · Since 1932
           </div>
           <h1
             className="mt-5 text-5xl sm:text-6xl md:text-7xl font-black leading-[0.95] tracking-tight text-[var(--color-brand-ink)]"
@@ -213,6 +227,14 @@ function Hero() {
               Visit the Shop
             </a>
             <a
+              href={WHATSAPP_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-full bg-[#25D366] text-white px-5 py-3.5 text-sm font-semibold shadow-[0_18px_40px_-18px_rgba(37,211,102,0.8)] hover:translate-y-[-2px] transition"
+            >
+              <WhatsAppIcon className="size-4" /> WhatsApp
+            </a>
+            <a
               href={INSTAGRAM_URL}
               target="_blank"
               rel="noopener noreferrer"
@@ -222,12 +244,34 @@ function Hero() {
             </a>
           </div>
 
-          <div className="mt-10 flex items-center gap-6">
-            <Stat number="1932" label="Est. Latur" />
-            <div className="h-10 w-px bg-[var(--color-brand-umber)]/20" />
-            <Stat number="10–9:30" label="Mon – Sat" />
-            <div className="h-10 w-px bg-[var(--color-brand-umber)]/20" />
-            <Stat number="11–8" label="Sundays" />
+          <div className="mt-10 relative rounded-3xl border border-[var(--color-brand-umber)]/15 bg-gradient-to-br from-[var(--color-brand-cream)] to-[var(--color-brand-clay)]/50 p-5 shadow-[0_20px_60px_-30px_rgba(4,47,46,0.35)]">
+            <div className="absolute -top-3 left-5 px-3 py-1 rounded-full bg-[var(--color-brand-ink)] text-[10px] font-bold uppercase tracking-[0.25em] text-[var(--color-brand-gold)]">
+              ● Open Today
+            </div>
+            <div className="flex items-stretch gap-4">
+              <div className="flex-1">
+                <div className="text-[10px] uppercase tracking-[0.28em] text-[var(--color-brand-umber)]/70">Weekdays</div>
+                <div className="mt-1 font-serif italic text-[var(--color-brand-ink)] text-lg leading-tight">Mon — Sat</div>
+                <div className="mt-1 text-2xl font-black text-[var(--color-brand-ink)] tabular-nums">
+                  10:00<span className="text-xs align-top ml-0.5 text-[var(--color-brand-ochre)]">AM</span>
+                  <span className="mx-1 text-[var(--color-brand-ochre)]">→</span>
+                  9:30<span className="text-xs align-top ml-0.5 text-[var(--color-brand-ochre)]">PM</span>
+                </div>
+              </div>
+              <div className="w-px bg-gradient-to-b from-transparent via-[var(--color-brand-umber)]/30 to-transparent" />
+              <div className="flex-1">
+                <div className="text-[10px] uppercase tracking-[0.28em] text-[var(--color-brand-umber)]/70">Weekend</div>
+                <div className="mt-1 font-serif italic text-[var(--color-brand-ink)] text-lg leading-tight">Sunday</div>
+                <div className="mt-1 text-2xl font-black text-[var(--color-brand-ink)] tabular-nums">
+                  11:00<span className="text-xs align-top ml-0.5 text-[var(--color-brand-ochre)]">AM</span>
+                  <span className="mx-1 text-[var(--color-brand-ochre)]">→</span>
+                  8:00<span className="text-xs align-top ml-0.5 text-[var(--color-brand-ochre)]">PM</span>
+                </div>
+              </div>
+            </div>
+            <div className="mt-3 pt-3 border-t border-dashed border-[var(--color-brand-umber)]/20 text-[11px] text-[var(--color-brand-umber)]/75 italic text-center">
+              "Until you walk in, you're a customer — after that, family."
+            </div>
           </div>
         </div>
 
@@ -536,7 +580,7 @@ function Visit({ mapUrl }: { mapUrl: string }) {
                 <br />
                 Chainsukh Road, opp. Shopper Stop,
                 <br />
-                Hatte Nagar, Latur, Maharashtra 413512
+                Sawe Wadi, Latur, Maharashtra 413512
               </address>
 
               <div className="mt-8 grid sm:grid-cols-2 gap-4">
@@ -553,6 +597,15 @@ function Visit({ mapUrl }: { mapUrl: string }) {
                 >
                   <PhoneIcon className="size-4" />
                   Call {PHONE_DISPLAY}
+                </a>
+                <a
+                  href={WHATSAPP_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 rounded-full bg-[#25D366] text-white px-6 py-3 text-sm font-bold hover:translate-y-[-2px] transition shadow-[0_18px_40px_-10px_rgba(37,211,102,0.55)]"
+                >
+                  <WhatsAppIcon className="size-4" />
+                  WhatsApp Us
                 </a>
                 <a
                   href={mapUrl}
@@ -621,7 +674,7 @@ function Why() {
     { t: "Since 1932", b: "Four generations of trust — Latur's original footwear house.", n: "01" },
     { t: "Expert Staff", b: "Honest guidance on fit, finish, and material — every visit.", n: "02" },
     { t: "Curated Range", b: "Campus, Sparx, Abros, formals, kolhapuris & more — picked by hand.", n: "03" },
-    { t: "Prime Location", b: "Lahoti Landmark, Chainsukh Road — opp. Shopper Stop, Hatte Nagar.", n: "04" },
+    { t: "Prime Location", b: "Lahoti Landmark, Chainsukh Road — opp. Shopper Stop, Sawe Wadi.", n: "04" },
   ];
   return (
     <section className="relative py-24 md:py-32">
@@ -687,7 +740,7 @@ function About() {
           serving generations with quality, care and a warm welcome.”
         </p>
         <p className="mt-6 text-sm text-[var(--color-brand-umber)]/70">
-          Visit us at Lahoti Landmark, Chainsukh Road, opp. Shopper Stop, Hatte Nagar, Latur.
+          Visit us at Lahoti Landmark, Chainsukh Road, opp. Shopper Stop, Sawe Wadi, Latur.
         </p>
       </div>
     </section>
@@ -698,14 +751,14 @@ function About() {
 
 function Faq() {
   const items = [
-    ["Where is Atul Footwear located?", "Lahoti Landmark, Chainsukh Road, opposite Shopper Stop, Hatte Nagar, Latur — 413512, Maharashtra."],
+    ["Where is Atul Footwear located?", "Lahoti Landmark, Chainsukh Road, opposite Shopper Stop, Sawe Wadi, Latur — 413512, Maharashtra."],
     ["What is the contact number?", `Call ${PHONE_DISPLAY} for inquiries.`],
     ["What are the working hours?", "Monday to Saturday: 10:00 AM – 9:30 PM. Sunday: 11:00 AM – 8:00 PM."],
     ["Is the shop open on Sunday?", "Yes — we're open on Sundays from 11:00 AM to 8:00 PM."],
     ["What payment methods are accepted?", "We accept Cash, UPI, and Card payments for your convenience."],
     ["Is parking available?", "Yes — customer parking is available at the shop."],
     ["What kind of footwear do you stock?", "Formal leather, sneakers (Campus, Sparx, Abros and more), sandals, Kolhapuris, school shoes, and women's & kids' footwear."],
-    ["How do I get there?", "Tap the map above for turn-by-turn directions to Lahoti Landmark, Chainsukh Road, Hatte Nagar."],
+    ["How do I get there?", "Tap the map above for turn-by-turn directions to Lahoti Landmark, Chainsukh Road, Sawe Wadi."],
     ["Are you on Instagram?", "Yes — follow @atulfootwear on Instagram for new arrivals and updates."],
     ["Why should you trust Atul?", "Atul Footwear has served Latur since 1932. Four generations of honest pricing, genuine quality and personal service — every pair hand-picked, every customer treated like family."],
   ];
@@ -768,7 +821,7 @@ function Footer() {
           <div>
             <div className="text-[11px] uppercase tracking-[0.22em] text-[var(--color-brand-gold)] mb-2">Visit</div>
             Lahoti Landmark, Chainsukh Road,
-            <br /> opp. Shopper Stop, Hatte Nagar,
+            <br /> opp. Shopper Stop, Sawe Wadi,
             <br /> Latur, Maharashtra 413512
           </div>
           <div>
@@ -836,6 +889,13 @@ function InstagramIcon({ className }: { className?: string }) {
       <rect x="3" y="3" width="18" height="18" rx="5" />
       <circle cx="12" cy="12" r="4" />
       <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
+    </svg>
+  );
+}
+function WhatsAppIcon({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.372-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.095 3.2 5.077 4.487.71.306 1.263.489 1.695.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12.017 2C6.484 2 2 6.484 2 12.017c0 1.77.464 3.497 1.343 5.02L2 22l5.077-1.324a9.98 9.98 0 0 0 4.94 1.271h.004c5.532 0 10.017-4.484 10.017-10.017C22.038 6.484 17.553 2 12.017 2zm5.879 15.859c-.25.703-1.464 1.377-2.017 1.462-.516.079-1.16.111-1.87-.117-.431-.137-.985-.319-1.694-.625-2.985-1.288-4.93-4.29-5.079-4.489-.147-.199-1.213-1.613-1.213-3.075 0-1.462.768-2.182 1.04-2.479.272-.298.594-.372.792-.372.198 0 .396.002.569.011.181.009.427-.069.669.51.248.595.842 2.058.916 2.207.075.149.124.322.025.52-.099.199-.149.323-.298.497-.148.174-.312.387-.446.52-.148.148-.303.309-.13.606.173.298.77 1.271 1.653 2.059 1.135 1.012 2.093 1.325 2.39 1.475.297.148.471.124.644-.075.173-.198.743-.867.94-1.164.199-.298.397-.249.67-.15.272.1 1.733.818 2.03.967.297.149.495.223.57.347.075.124.075.719-.173 1.413z"/>
     </svg>
   );
 }
