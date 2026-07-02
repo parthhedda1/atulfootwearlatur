@@ -11,7 +11,7 @@ const PHONE_DISPLAY = "+91 98905 57555";
 const PHONE_TEL = "+919890557555";
 const INSTAGRAM_URL = "https://www.instagram.com/atulfootwear?igsh=ZDJnZzk3d2F3OG1o";
 const ADDRESS_FULL =
-  "Atul Footwear, Lahoti Landmark, Chainsukh Road, opp. Shopper Stop, Hatte Nagar, Latur, Maharashtra 413512";
+  "Atul Footwear, Lahoti Landmark, Chainsukh Road, opp. Shopper Stop, Sawe Wadi, Latur, Maharashtra 413512";
 const MAPS_EMBED_SRC =
   "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7571.581742415945!2d76.58128237549558!3d18.40236668266841!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcf839772e3dbc7%3A0x49b80c864d403e03!2sAtul%20Footwear!5e0!3m2!1sen!2sin!4v1782892178305!5m2!1sen!2sin";
 
@@ -22,13 +22,13 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "Atul Footwear, Latur — trusted since 1932. Lahoti Landmark, Chainsukh Road, opp. Shopper Stop, Hatte Nagar. Call +91 98905 57555.",
+          "Atul Footwear, Latur — trusted since 1932. Lahoti Landmark, Chainsukh Road, opp. Shopper Stop, Sawe Wadi. Call +91 98905 57555.",
       },
       { property: "og:title", content: "Atul Footwear — Sole to Soul Since 1932" },
       {
         property: "og:description",
         content:
-          "Curated footwear and expert fitting in the heart of Latur since 1932. Visit us at Lahoti Landmark, opp. Shopper Stop, Hatte Nagar.",
+          "Curated footwear and expert fitting in the heart of Latur since 1932. Visit us at Lahoti Landmark, opp. Shopper Stop, Sawe Wadi.",
       },
     ],
   }),
@@ -152,7 +152,7 @@ function Hero() {
         <div>
           <div className="inline-flex items-center gap-2 rounded-full border border-[var(--color-brand-umber)]/20 bg-[var(--color-brand-cream)]/70 backdrop-blur px-3 py-1 text-xs uppercase tracking-[0.18em] text-[var(--color-brand-umber)]">
             <span className="size-1.5 rounded-full bg-[var(--color-brand-ochre)]" />
-            Hatte Nagar · Latur · Since 1932
+            Sawe Wadi · Latur · Since 1932
           </div>
           <h1
             className="mt-5 text-5xl sm:text-6xl md:text-7xl font-black leading-[0.95] tracking-tight text-[var(--color-brand-ink)]"
@@ -536,7 +536,7 @@ function Visit({ mapUrl }: { mapUrl: string }) {
                 <br />
                 Chainsukh Road, opp. Shopper Stop,
                 <br />
-                Hatte Nagar, Latur, Maharashtra 413512
+                Sawe Wadi, Latur, Maharashtra 413512
               </address>
 
               <div className="mt-8 grid sm:grid-cols-2 gap-4">
@@ -621,7 +621,7 @@ function Why() {
     { t: "Since 1932", b: "Four generations of trust — Latur's original footwear house.", n: "01" },
     { t: "Expert Staff", b: "Honest guidance on fit, finish, and material — every visit.", n: "02" },
     { t: "Curated Range", b: "Campus, Sparx, Abros, formals, kolhapuris & more — picked by hand.", n: "03" },
-    { t: "Prime Location", b: "Lahoti Landmark, Chainsukh Road — opp. Shopper Stop, Hatte Nagar.", n: "04" },
+    { t: "Prime Location", b: "Lahoti Landmark, Chainsukh Road — opp. Shopper Stop, Sawe Wadi.", n: "04" },
   ];
   return (
     <section className="relative py-24 md:py-32">
@@ -687,7 +687,7 @@ function About() {
           serving generations with quality, care and a warm welcome.”
         </p>
         <p className="mt-6 text-sm text-[var(--color-brand-umber)]/70">
-          Visit us at Lahoti Landmark, Chainsukh Road, opp. Shopper Stop, Hatte Nagar, Latur.
+          Visit us at Lahoti Landmark, Chainsukh Road, opp. Shopper Stop, Sawe Wadi, Latur.
         </p>
       </div>
     </section>
@@ -698,14 +698,14 @@ function About() {
 
 function Faq() {
   const items = [
-    ["Where is Atul Footwear located?", "Lahoti Landmark, Chainsukh Road, opposite Shopper Stop, Hatte Nagar, Latur — 413512, Maharashtra."],
+    ["Where is Atul Footwear located?", "Lahoti Landmark, Chainsukh Road, opposite Shopper Stop, Sawe Wadi, Latur — 413512, Maharashtra."],
     ["What is the contact number?", `Call ${PHONE_DISPLAY} for inquiries.`],
     ["What are the working hours?", "Monday to Saturday: 10:00 AM – 9:30 PM. Sunday: 11:00 AM – 8:00 PM."],
     ["Is the shop open on Sunday?", "Yes — we're open on Sundays from 11:00 AM to 8:00 PM."],
     ["What payment methods are accepted?", "We accept Cash, UPI, and Card payments for your convenience."],
     ["Is parking available?", "Yes — customer parking is available at the shop."],
     ["What kind of footwear do you stock?", "Formal leather, sneakers (Campus, Sparx, Abros and more), sandals, Kolhapuris, school shoes, and women's & kids' footwear."],
-    ["How do I get there?", "Tap the map above for turn-by-turn directions to Lahoti Landmark, Chainsukh Road, Hatte Nagar."],
+    ["How do I get there?", "Tap the map above for turn-by-turn directions to Lahoti Landmark, Chainsukh Road, Sawe Wadi."],
     ["Are you on Instagram?", "Yes — follow @atulfootwear on Instagram for new arrivals and updates."],
     ["Why should you trust Atul?", "Atul Footwear has served Latur since 1932. Four generations of honest pricing, genuine quality and personal service — every pair hand-picked, every customer treated like family."],
   ];
@@ -768,7 +768,7 @@ function Footer() {
           <div>
             <div className="text-[11px] uppercase tracking-[0.22em] text-[var(--color-brand-gold)] mb-2">Visit</div>
             Lahoti Landmark, Chainsukh Road,
-            <br /> opp. Shopper Stop, Hatte Nagar,
+            <br /> opp. Shopper Stop, Sawe Wadi,
             <br /> Latur, Maharashtra 413512
           </div>
           <div>
