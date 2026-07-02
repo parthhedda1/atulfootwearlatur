@@ -268,12 +268,32 @@ function Hero() {
               animation: "float 6s ease-in-out infinite",
             }}
           />
-          {/* logo coin */}
+          {/* Premium monogram medallion */}
           <div
-            className="absolute right-2 md:right-0 top-4 md:top-8 size-28 md:size-36 rounded-full bg-[var(--color-brand-cream)] shadow-[inset_0_-6px_18px_rgba(0,0,0,0.15),0_18px_30px_-10px_rgba(0,0,0,0.4)] grid place-items-center p-3 border border-[var(--color-brand-umber)]/20"
-            style={{ animation: "float 7s ease-in-out infinite" }}
+            className="absolute right-2 md:right-0 top-4 md:top-8 size-28 md:size-36 rounded-full grid place-items-center"
+            style={{
+              background:
+                "radial-gradient(circle at 30% 30%, #fff6df 0%, #e8b86a 45%, #8a5a2b 100%)",
+              boxShadow:
+                "inset 0 -8px 20px rgba(58,31,23,0.45), inset 0 4px 10px rgba(255,255,255,0.5), 0 24px 40px -14px rgba(58,31,23,0.5)",
+              animation: "float 7s ease-in-out infinite",
+            }}
           >
-            <img src={atulLogo.url} alt="Atul Footwear" className="w-full h-full object-contain" />
+            <div
+              className="absolute inset-1.5 rounded-full border border-[var(--color-brand-ink)]/25"
+              aria-hidden
+            />
+            <div className="relative text-center leading-none">
+              <div
+                style={{ fontFamily: "var(--font-display)" }}
+                className="text-4xl md:text-5xl font-black italic text-[var(--color-brand-ink)]"
+              >
+                Af
+              </div>
+              <div className="mt-1 text-[8px] md:text-[9px] uppercase tracking-[0.28em] text-[var(--color-brand-ink)]/80 font-semibold">
+                Est · 1932
+              </div>
+            </div>
           </div>
           <div
             className="absolute left-0 bottom-4 md:bottom-10 rounded-2xl bg-[var(--color-brand-cream)]/90 backdrop-blur border border-[var(--color-brand-umber)]/15 p-3 pr-5 flex items-center gap-3 shadow-[0_20px_40px_-20px_rgba(58,31,23,0.4)]"

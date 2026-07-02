@@ -84,7 +84,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:description", content: "Trusted footwear shop in Latur. Visit Atul Footwear at Lahoti Landmark, Sawe Wadi for quality shoes, expert guidance, and convenient parking." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
-      { name: "twitter:site", content: "@Lovable" },
+      
       { name: "twitter:title", content: "Atul Footwear — Latur" },
       { name: "twitter:description", content: "Trusted footwear shop in Latur. Visit Atul Footwear at Lahoti Landmark, Sawe Wadi for quality shoes, expert guidance, and convenient parking." },
       { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/b5150b43-3e4b-4ee2-927d-85c3103ef3fd" },
