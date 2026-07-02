@@ -10,6 +10,7 @@ import storeInterior from "../assets/store-interior.png.asset.json";
 const PHONE_DISPLAY = "+91 98905 57555";
 const PHONE_TEL = "+919890557555";
 const INSTAGRAM_URL = "https://www.instagram.com/atulfootwear?igsh=ZDJnZzk3d2F3OG1o";
+const WHATSAPP_URL = "https://wa.me/919890557555?text=Hi%20Atul%20Footwear%2C%20I%27d%20like%20to%20enquire%20about%20your%20collection.";
 const ADDRESS_FULL =
   "Atul Footwear, Lahoti Landmark, Chainsukh Road, opp. Shopper Stop, Sawe Wadi, Latur, Maharashtra 413512";
 const MAPS_EMBED_SRC =
