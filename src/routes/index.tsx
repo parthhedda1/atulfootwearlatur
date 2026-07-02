@@ -58,6 +58,19 @@ function Index() {
       <About />
       <Faq />
       <Footer />
+      <a
+        href={WHATSAPP_URL}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Chat on WhatsApp"
+        className="fixed bottom-5 right-5 z-50 inline-flex items-center gap-2 rounded-full bg-[#25D366] text-white pl-4 pr-5 py-3 shadow-[0_20px_50px_-10px_rgba(37,211,102,0.7)] hover:scale-105 transition-transform"
+      >
+        <span className="relative flex size-8 items-center justify-center">
+          <span className="absolute inset-0 rounded-full bg-white/30 animate-ping" />
+          <WhatsAppIcon className="size-6 relative" />
+        </span>
+        <span className="hidden sm:inline text-sm font-bold">Chat</span>
+      </a>
     </div>
   );
 }
